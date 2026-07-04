@@ -1,0 +1,10 @@
+services:
+  maxbridge:
+    command: bash
+    stdin_open: true
+    tty: true
+    build: .  
+    container_name: maxbridge
+    restart: unless-stopped
+    volumes:
+      - ./data:/data
