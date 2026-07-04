@@ -13,8 +13,12 @@ try:
         print(chat)
 
     print("\nOpening chat: Дети\n")
-    ok = client.open_chat("Дети")
-    print("Opened:", ok)
+    client.open_chat("Дети")
+    browser.page.wait_for_timeout(2000)
+    msgs = client.get_messages()
+    for m in msgs:
+        print(m)
+        print("-" * 60)
 
 finally:
     browser.disconnect()
